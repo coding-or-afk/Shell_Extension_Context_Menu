@@ -1,0 +1,34 @@
+﻿// SimpleShlExt.idl: SimpleShlExt의 IDL 소스
+//
+
+// 이 파일은 MIDL 도구에 의해 처리되어
+// 형식 라이브러리(SimpleShlExt.tlb) 및 마샬링 코드를 생성합니다.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(979bcbb2-0e8b-4a7d-885b-96464cdd8c7a),
+	pointer_default(unique)
+]
+interface IShlExt : IUnknown
+{
+};
+[
+	uuid(1914c8d6-cd99-44c3-a595-fc755687723c),
+	version(1.0),
+]
+library SimpleShlExtLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(b3578191-7cd7-4376-a3d2-d37f001accb6)
+	]
+	coclass ShlExt
+	{
+		[default] interface IShlExt;
+	};
+};
+
+import "shobjidl.idl";

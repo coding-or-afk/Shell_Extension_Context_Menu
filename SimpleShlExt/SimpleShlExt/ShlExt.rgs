@@ -1,0 +1,23 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {b3578191-7cd7-4376-a3d2-d37f001accb6} = s 'ShlExt class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+	NoRemove AllFilesystemObjects
+	{
+		NoRemove ShellEx
+		{
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove SimpleShlExt = s '{b3578191-7cd7-4376-a3d2-d37f001accb6}'
+			}
+		}
+	}
+}
